@@ -6,16 +6,16 @@ description: Here's a list of projects I've completed or participated in.
 nav: true
 nav_order: 2
 pdf: portfolio.pdf
-display_categories: ["Electronics", "Computer Science", "Mechanical Engineering"]
+display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"]
 
 subcategory_order:
   Computer Science:
-    - Firmware Development
-    - Cybersecurity
-    - Software Development
+    - Artificial Intelligence
     - Data Engineering
     - DevOps and Automation
-    - Artificial Intelligence
+    - Cybersecurity
+    - Software Development
+    - Firmware Development
     - Documentation
   Electronics:
     - PCB Design
