@@ -23,7 +23,7 @@ jobs:
           
           REPOS_JSON=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
                             -H "Accept: application/vnd.github.v3+json" \
-                            https://api.github.com/users/mpek29/repos?type=all)
+                            https://api.github.com/users/tirovo/repos?type=all)
           
           if echo "$REPOS_JSON" | jq -e 'has("message")' > /dev/null; then
             echo "❌ Error fetching repos:"
@@ -49,7 +49,7 @@ jobs:
             title=$(echo "$repo" | jq -r '.title')
             full_name=$(echo "$repo" | jq -r '.full_name')
 
-            if [[ "$title" == "MPek29" || "$title" == "en" || "$title" == "mon-site-jekyll" || "$title" == "mpek29.github.io" ]]; then
+            if [[ "$title" == "Tirovo"|| "$title" == "tirovo.github.io" ]]; then
               echo "⚠️ Repository '$title' ignored."
               continue
             fi
