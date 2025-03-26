@@ -5,7 +5,7 @@ permalink: /
 
 profile:
   align: right
-  image: flo_pic.png
+  image: tri_pic.png
   image_circular: false
 
 news: false
