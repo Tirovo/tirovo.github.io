@@ -18,12 +18,12 @@ subcategory_order:
     - Firmware Development
     - Documentation
   Electronics:
+    - Signal and Image Processing
     - PCB Design
     - Digital System Design
     - PCB Reverse Engineering
     - Digital Electronics
     - Power Electronics
-    - Signal and Image Processing
     - PCB Repair
   Mechanical Engineering:
     - Mechanical Design
