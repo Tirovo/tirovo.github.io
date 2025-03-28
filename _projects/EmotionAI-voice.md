@@ -11,6 +11,7 @@ category: Computer Science
 subcategory: Artificial Intelligence
 ---
 
+{% include image.html path="assets/img/projects/EmotionAI-voice/main.png" width="300" %}
 
 
 **EmotionAI Voice** is an open-source deep learning project that classifies vocal emotions using raw `.wav` audio.  

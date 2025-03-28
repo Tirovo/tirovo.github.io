@@ -11,6 +11,7 @@ category: Computer Science
 subcategory: Artificial Intelligence
 ---
 
+{% include image.html path="assets/img/projects/FatiguEye/main.png" width="300" %}
 
 A smart computer vision system that detects signs of fatigue, eye strain, and microsleep using a standard webcam.
 
