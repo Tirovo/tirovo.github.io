@@ -4,6 +4,7 @@ title: Portfolio
 permalink: /clear/
 display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"]
 
+---
 subcategory_order:
   Computer Science:
     - Artificial Intelligence
@@ -30,6 +31,8 @@ subcategory_order:
     - Analysis and Simulation
     - Materials and Mechanics of Materials
     - Fluid Mechanics
+
+---
 
 {% assign about = site.abouts | first %}
 {{ about.content }}
