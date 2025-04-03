@@ -2,33 +2,35 @@
 layout: portfolio
 title: Portfolio
 permalink: /clear/
-display_categories: ["Electronics", "Computer Science", "Mechanical Engineering"]
+display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"]
 
 subcategory_order:
   Computer Science:
-    - Firmware Development
-    - Cybersecurity
-    - Software Development
-    - Data Engineering
-    - DevOps and Automation
     - Artificial Intelligence
+    - Software Development
+    - Cybersecurity
+    - DevOps and Automation
     - Documentation
+    - Data Engineering
+    - Firmware Development
+
   Electronics:
+    - Signal and Image Processing
     - PCB Design
-    - Digital System Design
     - PCB Reverse Engineering
     - Digital Electronics
-    - Power Electronics
-    - Signal and Image Processing
+    - Digital System Design
     - PCB Repair
+    - Power Electronics
+
   Mechanical Engineering:
-    - Mechanical Design
-    - Analysis and Simulation
-    - Fluid Mechanics
-    - Materials and Mechanics of Materials
     - Control Systems
     - Automation
----
+    - Mechanical Design
+    - Analysis and Simulation
+    - Materials and Mechanics of Materials
+    - Fluid Mechanics
+
 {% assign about = site.abouts | first %}
 {{ about.content }}
 
