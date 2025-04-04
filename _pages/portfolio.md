@@ -4,34 +4,30 @@ title: Portfolio
 permalink: /portfolio/
 display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"]
 
----
 subcategory_order:
   Computer Science:
     - Artificial Intelligence
-    - Software Development
-    - Cybersecurity
-    - DevOps and Automation
-    - Documentation
     - Data Engineering
+    - DevOps and Automation
+    - Cybersecurity
+    - Software Development
     - Firmware Development
-
+    - Documentation
   Electronics:
     - Signal and Image Processing
     - PCB Design
+    - Digital System Design
     - PCB Reverse Engineering
     - Digital Electronics
-    - Digital System Design
-    - PCB Repair
     - Power Electronics
-
+    - PCB Repair
   Mechanical Engineering:
-    - Control Systems
-    - Automation
     - Mechanical Design
     - Analysis and Simulation
-    - Materials and Mechanics of Materials
     - Fluid Mechanics
-
+    - Materials and Mechanics of Materials
+    - Control Systems
+    - Automation
 ---
 
 {% assign about = site.abouts | first %}
@@ -45,6 +41,7 @@ subcategory_order:
     {%- assign categorized_projects = site.projects | where: "category", category -%}
 
     {%- if categorized_projects.size > 0 %}
+      <h2 class="category">{{ category }}</h2>
       
       <!-- Récupération de l'ordre des sous-catégories définies -->
       {%- assign ordered_subcategories = page.subcategory_order[category] -%}
@@ -53,9 +50,13 @@ subcategory_order:
         {%- assign filtered_projects = categorized_projects | where: "subcategory", subcategory | sort: "importance" %}
         
         {%- if filtered_projects.size > 0 %}
-          {%- for project in filtered_projects -%}
-            {% include projects_portfolio.html %}
-          {%- endfor %}
+          <h3 class="subcategory">{{ subcategory }}</h3>
+
+          <div class="grid">
+            {%- for project in filtered_projects -%}
+              {% include projects.html %}
+            {%- endfor %}
+          </div>
         {%- endif %}
       {%- endfor %}
       
@@ -72,5 +73,3 @@ subcategory_order:
   </div>
 {%- endif -%}
 </div>
-
----
