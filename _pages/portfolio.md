@@ -29,7 +29,6 @@ subcategory_order:
     - Control Systems
     - Automation
 ---
-
 {% assign about = site.abouts | first %}
 {{ about.content }}
 
@@ -41,7 +40,6 @@ subcategory_order:
     {%- assign categorized_projects = site.projects | where: "category", category -%}
 
     {%- if categorized_projects.size > 0 %}
-      <h2 class="category">{{ category }}</h2>
       
       <!-- Récupération de l'ordre des sous-catégories définies -->
       {%- assign ordered_subcategories = page.subcategory_order[category] -%}
@@ -50,13 +48,9 @@ subcategory_order:
         {%- assign filtered_projects = categorized_projects | where: "subcategory", subcategory | sort: "importance" %}
         
         {%- if filtered_projects.size > 0 %}
-          <h3 class="subcategory">{{ subcategory }}</h3>
-
-          <div class="grid">
-            {%- for project in filtered_projects -%}
-              {% include projects.html %}
-            {%- endfor %}
-          </div>
+          {%- for project in filtered_projects -%}
+            {% include projects_portfolio.html %}
+          {%- endfor %}
         {%- endif %}
       {%- endfor %}
       
@@ -73,3 +67,6 @@ subcategory_order:
   </div>
 {%- endif -%}
 </div>
+
+---
+
