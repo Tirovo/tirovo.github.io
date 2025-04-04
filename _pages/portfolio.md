@@ -1,7 +1,7 @@
 ---
 layout: portfolio
 title: Portfolio
-permalink: /clear/
+permalink: /portfolio/
 display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"]
 
 ---
