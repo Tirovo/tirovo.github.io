@@ -11,7 +11,7 @@ display_categories: ["Computer Science", "Electronics", "Mechanical Engineering"
 subcategory_order:
   Computer Science:
     - Artificial Intelligence
-    - Data Engineering
+    - Data science
     - DevOps and Automation
     - Cybersecurity
     - Software Development
