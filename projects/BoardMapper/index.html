@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GAN-py-bara | LONDE  Tristan</title>
+    <title>BoardMapper | LONDE  Tristan</title>
     <meta name="author" content="LONDE  Tristan">
-    <meta name="description" content="Projet d'IA sur la reconaissance de capybara">
+    <meta name="description" content="🛠️ PCB placement map generator">
     <meta name="keywords" content="portfolio, projets, tristanlonde, français, ia, ai">
 
 
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.jpg">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://tirovo.github.io//projects/GAN-py-bara/">
+    <link rel="canonical" href="https://tirovo.github.io//projects/BoardMapper/">
     
     <!-- Dark Mode -->
     
@@ -119,12 +119,12 @@
       <!-- page.html -->
         <div class="post">
           <header class="post-header">
-            <h1 class="post-title">GAN-py-bara
+            <h1 class="post-title">BoardMapper
               
               
               
               
-              <a href="https://github.com/Thon-Mayo/GAN-py-bara" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fab fa-github" style="margin-left: 10px;margin-right: 10px;"></i></a>
+              <a href="https://github.com/mpek29/BoardMapper" target="_blank" rel="noopener noreferrer" class="float-right"><i class="fab fa-github" style="margin-left: 10px;margin-right: 10px;"></i></a>
               
 
               
@@ -132,11 +132,174 @@
               
 
             </h1>
-            <p class="post-description">Projet d'IA sur la reconaissance de capybara</p>
+            <p class="post-description">🛠️ PCB placement map generator</p>
           </header>
 
           <article>
-            
+            <p>BoardMapper is an open-source tool designed to automatically generate PCB layout. It labels component references (e.g. U1, R1, C1) directly on the circuit image, facilitating component identification for reverse engineering purposes.</p>
+
+<h2 id="-purpose">🎯 Purpose</h2>
+
+<ul>
+  <li>🤖 <strong>Automation</strong>: Eliminates the need for manual placement annotation on PCB layouts.</li>
+  <li>⏱️ <strong>Efficiency</strong>: Saves time for engineers and makers working on PCB assembly and debugging.</li>
+  <li>🔍 <strong>Clarity</strong>: Provides a clear visual reference for debugging, testing, and manufacturing.</li>
+  <li>💻 <strong>Cross-Platform</strong>: Works on Windows, Linux, and macOS systems.</li>
+</ul>
+
+<h2 id="-annotation">📝 Annotation</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Original</th>
+      <th>Annotated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Top</strong></td>
+      <td><img src="/assets/img/projects/BoardMapper/top.png" width="300" height="auto"></td>
+      <td><img src="/assets/img/projects/BoardMapper/top_annotated.png" width="300" height="auto"></td>
+    </tr>
+    <tr>
+      <td><strong>Bottom</strong></td>
+      <td><img src="/assets/img/projects/BoardMapper/bottom.png" width="300" height="auto"></td>
+      <td><img src="/assets/img/projects/BoardMapper/bottom_annotated.png" width="300" height="auto"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-requirements">📋 Requirements</h2>
+
+<ul>
+  <li>
+<strong>Python</strong>: Version 3.6 or higher</li>
+  <li>
+<strong>Required Libraries</strong>:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">opencv-python</code> (for image processing)</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">lxml</code> (for XML parsing)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-installation-instructions">🚀 Installation Instructions</h2>
+
+<h3 id="️-setup">🛠️ Setup</h3>
+
+<ol>
+  <li>
+    <p><strong>Clone the repository</strong> or <strong>Download the project</strong> to your local machine.</p>
+  </li>
+  <li>
+<strong>Labeling the PCB</strong>:
+    <ul>
+      <li>
+<strong>Step 1</strong>: Take a photo of both the top and bottom layers of the chosen PCB.</li>
+      <li>
+<strong>Step 2</strong>: Place the <code class="language-plaintext highlighter-rouge">top.png</code> and <code class="language-plaintext highlighter-rouge">bottom.png</code> images into the <code class="language-plaintext highlighter-rouge">input</code> folder.</li>
+      <li>
+<strong>Step 3</strong>: Install the latest version of <a href="https://github.com/HumanSignal/labelImg/releases" rel="external nofollow noopener" target="_blank">LabelImg</a>.</li>
+      <li>
+<strong>Step 4</strong>: Open <code class="language-plaintext highlighter-rouge">top.png</code> in LabelImg and draw bounding boxes around each component. Label each component according to its type:
+        <ul>
+          <li>
+<strong>R</strong>: Resistor</li>
+          <li>
+<strong>C</strong>: Capacitor</li>
+          <li>
+<strong>L</strong>: Inductor</li>
+          <li>
+<strong>F</strong>: Fuse</li>
+          <li>
+<strong>POT</strong>: Potentiometer</li>
+          <li>
+<strong>D</strong>: Diode</li>
+          <li>
+<strong>LED</strong>: LED</li>
+          <li>
+<strong>Q</strong>: Transistor (BJT, MOSFET)</li>
+          <li>
+<strong>U</strong>: Integrated Circuit (IC)</li>
+          <li>
+<strong>J</strong>: Connector</li>
+          <li>
+<strong>K</strong>: Relay</li>
+          <li>
+<strong>SW</strong>: Switch</li>
+          <li>
+<strong>Y</strong>: Quartz / Resonator</li>
+          <li>
+<strong>SP</strong>: Speaker</li>
+          <li>
+<strong>ANT</strong>: Antenna</li>
+        </ul>
+
+        <p><strong>LabelImg Shortcuts</strong>:</p>
+        <ul>
+          <li>✏️ <strong>W</strong>: Draw a new rectangular bounding box (RectBox)</li>
+          <li>❌ <strong>D</strong>: Delete the last drawn bounding box</li>
+          <li>💾 <strong>Ctrl + S</strong>: Save the annotation as an XML file</li>
+          <li>⏪ <strong>Ctrl + Z</strong>: Undo the last action</li>
+          <li>📋 <strong>Ctrl + C</strong>: Copy a bounding box</li>
+          <li>📏 <strong>Ctrl + V</strong>: Paste a copied bounding box</li>
+          <li>🔍 <strong>Ctrl + A</strong>: Select all bounding boxes</li>
+          <li>🔄 <strong>Ctrl + R</strong>: Rotate the image (for better labeling)</li>
+          <li>🚫 <strong>Esc</strong>: Cancel the current operation or close a dialog box</li>
+        </ul>
+      </li>
+      <li>
+<strong>Step 5</strong>: After labeling the <code class="language-plaintext highlighter-rouge">top.png</code>, save the annotation as <code class="language-plaintext highlighter-rouge">top.xml</code>.</li>
+      <li>
+<strong>Step 6</strong>: Repeat the labeling process for the <code class="language-plaintext highlighter-rouge">bottom.png</code> and save it as <code class="language-plaintext highlighter-rouge">bottom.xml</code>.</li>
+      <li>
+<strong>Step 7</strong>: Place both <code class="language-plaintext highlighter-rouge">top.xml</code> and <code class="language-plaintext highlighter-rouge">bottom.xml</code> into the <code class="language-plaintext highlighter-rouge">input</code> folder.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Running the Tool</strong>:
+    <ul>
+      <li>
+<strong>Windows</strong>: Double-click on <code class="language-plaintext highlighter-rouge">setup_and_run.bat</code> to automatically run the script. The tool will read the XML annotations, draw bounding boxes on the images, and save the annotated images.</li>
+      <li>
+<strong>Linux/macOS</strong>: You can run the script from the terminal:
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>chmod +x script.sh
+./script.sh
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>📂 Output</strong>:
+    <ul>
+      <li>After the script has executed, navigate to the <code class="language-plaintext highlighter-rouge">output</code> folder to find the resulting annotated images:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">top_annotated.png</code></li>
+          <li><code class="language-plaintext highlighter-rouge">bottom_annotated.png</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-contributions">🤝 Contributions</h2>
+
+<p>If you’d like to contribute to the project, please follow these steps:</p>
+<ol>
+  <li>Fork the repository</li>
+  <li>Create a feature branch</li>
+  <li>Commit your changes</li>
+  <li>Push to the branch</li>
+  <li>Open a pull request</li>
+</ol>
+
+<p>We welcome any contributions to improve BoardMapper! 🎉</p>
+
 
           </article>
 
